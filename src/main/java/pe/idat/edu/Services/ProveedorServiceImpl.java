@@ -1,24 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pe.idat.edu.Services;
 
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import pe.idat.edu.Entity.ProveedorEntity;
 import pe.idat.edu.Repository.ProveedorRepository;
 
-/**
- *
- * @author flores
- */
+@Service
 public class ProveedorServiceImpl implements ProveedorService{
 
-     @Autowired
-     private ProveedorRepository proveedorRepository;
+    @Autowired
+    private ProveedorRepository proveedorRepository;
+    
     @Override
     public List<ProveedorEntity> findAll() {
         return proveedorRepository.findAll();

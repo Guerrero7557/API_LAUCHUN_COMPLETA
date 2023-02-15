@@ -8,13 +8,11 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import pe.idat.edu.Entity.VentaEntity;
 import pe.idat.edu.Repository.VentaRepository;
 
-/**
- *
- * @author flores
- */
+@Service
 public class VentaServiceImpl implements VentaService {
     @Autowired
     private VentaRepository ventarepository;

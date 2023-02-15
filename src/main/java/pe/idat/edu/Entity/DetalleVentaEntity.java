@@ -40,7 +40,7 @@ public class DetalleVentaEntity implements Serializable{
     @Column(name = "cantidad")
     private int cantidad;
     
-    @Column(name = "motodetallev")
-    private double motodetallev;
+    @Column(name = "montodetallev")
+    private double montodetallev;
     
 }

@@ -2,24 +2,24 @@ package pe.idat.edu.Services;
 
 import java.util.List;
 import java.util.Optional;
-import pe.idat.edu.Entity.CompraEntity;
+import pe.idat.edu.Entity.CabCarritoEntity;
 
-public interface CompraService {
+public interface CabCarritoService {
     //funcion que te permita mostrar todos los datos    
-    List<CompraEntity> findAll();
+    List<CabCarritoEntity> findAll();
     
     //funcion para mostrar todods los datos habilitados
-    List<CompraEntity> findAllCustom();
+    List<CabCarritoEntity> findAllCustom();
     
     //funcion para buscar por codigo
-    Optional<CompraEntity> findById(Long id);
+    Optional<CabCarritoEntity> findById(Long id);
     
     //funcion para registrar datos
-    CompraEntity add(CompraEntity co);
+    CabCarritoEntity add(CabCarritoEntity c);
     
     //funcion para actualizar datos
-    CompraEntity update(CompraEntity co);
+    CabCarritoEntity update(CabCarritoEntity c);
     
     //funcion para eliminar datos
-    CompraEntity delete(CompraEntity co);
+    CabCarritoEntity delete(CabCarritoEntity c);
 }

@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import pe.idat.edu.Entity.CategoriaEntity;
 import pe.idat.edu.Services.CategoriaService;
 
-
-
 @RestController
 @RequestMapping("/categoria")
 public class CategoriaController {

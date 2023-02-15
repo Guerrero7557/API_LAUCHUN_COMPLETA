@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pe.idat.edu.Controller;
 
 import java.util.List;
@@ -18,47 +14,43 @@ import org.springframework.web.bind.annotation.RestController;
 import pe.idat.edu.Entity.CompraEntity;
 import pe.idat.edu.Services.CompraService;
 
-/**
- *
- * @author flores
- */
 @RestController
 @RequestMapping("/compra")
 public class CompraController {
+    
     @Autowired
-    private CompraService compraRepository;
+    private CompraService ComSer;
     
     @GetMapping
-    public List<CompraEntity> findAll(){
-        return compraRepository.findAll();
+    public List<CompraEntity>findAll(){
+        return ComSer.findAll();
     }
     
     @GetMapping("/custom")
     public List<CompraEntity>findAllCustom(){
-        return compraRepository.findAllCustom();
+        return ComSer.findAllCustom();
     }
     
     @GetMapping("/{id}")
-    public Optional<CompraEntity> findById(@PathVariable Long id){
-        return compraRepository.findById(id);
+    public Optional<CompraEntity>findById(@PathVariable Long id ){
+        return ComSer.findById(id);
     }
     
     @PostMapping
-    public CompraEntity add (@RequestBody CompraEntity co){
-        return compraRepository.add(co);
+    public CompraEntity add(@RequestBody CompraEntity co){
+        return ComSer.add(co);
     }
     
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
     public CompraEntity update(@PathVariable long id, @RequestBody CompraEntity co){
         co.setIdcompra(id);
-        return compraRepository.update(co);
+        return ComSer.update(co);
     }
     
     @DeleteMapping("/{id}")
     public CompraEntity delete(@PathVariable long id){
         CompraEntity objcompra = new CompraEntity();
         objcompra.setEstado(false);
-        return compraRepository.delete(CompraEntity.builder().idcompra(id).build());
+        return ComSer.delete(CompraEntity.builder().idcompra(id).build());
     }
-    
 }

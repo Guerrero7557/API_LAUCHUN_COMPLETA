@@ -2,24 +2,24 @@ package pe.idat.edu.Services;
 
 import java.util.List;
 import java.util.Optional;
-import pe.idat.edu.Entity.CompraEntity;
+import pe.idat.edu.Entity.UsuarioEntity;
 
-public interface CompraService {
+public interface UsuarioService {
     //funcion que te permita mostrar todos los datos    
-    List<CompraEntity> findAll();
+    List<UsuarioEntity> findAll();
     
     //funcion para mostrar todods los datos habilitados
-    List<CompraEntity> findAllCustom();
+    List<UsuarioEntity> findAllCustom();
     
     //funcion para buscar por codigo
-    Optional<CompraEntity> findById(Long id);
+    Optional<UsuarioEntity> findById(Long id);
     
     //funcion para registrar datos
-    CompraEntity add(CompraEntity co);
+    UsuarioEntity add(UsuarioEntity u);
     
     //funcion para actualizar datos
-    CompraEntity update(CompraEntity co);
+    UsuarioEntity update(UsuarioEntity u);
     
     //funcion para eliminar datos
-    CompraEntity delete(CompraEntity co);
+    UsuarioEntity delete(UsuarioEntity u);
 }
