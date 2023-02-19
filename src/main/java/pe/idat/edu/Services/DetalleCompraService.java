@@ -7,9 +7,10 @@ import pe.idat.edu.Entity.DetalleCompraEntity;
 public interface DetalleCompraService {
     //funcion que te permita mostrar todos los datos    
     List<DetalleCompraEntity> findAll();
+       
     
-    //funcion para mostrar todods los datos habilitados
-    List<DetalleCompraEntity> findAllCustom();
+    //funcion para buscar por id de compra
+    List<DetalleCompraEntity>findIdCompra(Long xidcompra);
     
     //funcion para buscar por codigo
     Optional<DetalleCompraEntity> findById(Long id);

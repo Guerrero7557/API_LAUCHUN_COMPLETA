@@ -14,16 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 import pe.idat.edu.Entity.RolEntity;
 import pe.idat.edu.Services.RolService;
 
-/**
- *
- * @author flores
- */
+
 @RestController
 @RequestMapping("/rol")
 
 public class RolController {
-    @Autowired
     
+    @Autowired    
     private RolService rolRepository;
     
     @GetMapping

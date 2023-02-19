@@ -14,7 +14,7 @@ import pe.idat.edu.Entity.ProveedorEntity;
  * @author flores
  */
 public interface ProveedorRepository extends JpaRepository<ProveedorEntity, Long>{
-    @Query("select pr from ProveedorEntity pr where pr.estado = 'Disponible'")
+    @Query("select pr from ProveedorEntity pr where pr.estado = true")
     List<ProveedorEntity>findAllCustom();
     
 }

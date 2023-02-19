@@ -40,8 +40,8 @@ public class VentaEntity implements Serializable{
     @Column(name="fechaventa")
     private String fechaventa;
     
-    @Column(name="montototal")
-    private double montototal;
+    @Column(name="montototalv")
+    private double montototalv;
     
     @Column(name="estado")
     private boolean estado;    

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pe.idat.edu.Entity.DetalleVentaEntity;
+
 import pe.idat.edu.Services.DetalleVentaService;
 
 @RestController
@@ -25,10 +26,11 @@ public class DetalleVentaController {
     public List<DetalleVentaEntity>findAll(){
         return DetVenServ.findAll();
     }
+        
     
-    @GetMapping("/custom")
-    public List<DetalleVentaEntity>findAllCustom(){
-        return DetVenServ.findAllCustom();
+    @GetMapping("/buscarporventa/{xidventa}")
+    public List<DetalleVentaEntity> findIdVenta(@PathVariable Long xidventa){
+        return DetVenServ.findIdVenta(xidventa);
     }
     
     @GetMapping("/{id}")

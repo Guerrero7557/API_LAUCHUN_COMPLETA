@@ -17,11 +17,11 @@ public class DetalleCompraServiceImpl implements DetalleCompraService{
     @Override
     public List<DetalleCompraEntity> findAll() {
         return detCompra.findAll();
-    }
-
+    }    
+    
     @Override
-    public List<DetalleCompraEntity> findAllCustom() {
-        return detCompra.findAllCustom();
+    public List<DetalleCompraEntity> findIdCompra(Long xidcompra) {
+        return detCompra.findIdCompra(xidcompra);
     }
 
     @Override
@@ -48,4 +48,5 @@ public class DetalleCompraServiceImpl implements DetalleCompraService{
         objdetallecompra.setEstado(false);
         return detCompra.save(objdetallecompra);
     }*/
+ 
 }

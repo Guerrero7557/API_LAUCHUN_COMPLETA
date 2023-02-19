@@ -14,7 +14,7 @@ import pe.idat.edu.Entity.TipoPagoEntity;
  * @author flores
  */
 public interface TipoPagoRepository  extends JpaRepository<TipoPagoEntity, Long>{
-      @Query("select tp from TipoPagoEntity tp where tp.estado = 'Cancelado'")
+      @Query("select tp from TipoPagoEntity tp where tp.estado = true")
     List<TipoPagoEntity>findAllCustom();  
     
 }

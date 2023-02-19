@@ -14,10 +14,12 @@ import pe.idat.edu.Repository.VentaRepository;
 
 @Service
 public class VentaServiceImpl implements VentaService {
+    
     @Autowired
     private VentaRepository ventarepository;
+    
     @Override
-    public List<VentaEntity> findAll() {
+    public List<VentaEntity> findAll(){
         return ventarepository.findAll();
     }
 

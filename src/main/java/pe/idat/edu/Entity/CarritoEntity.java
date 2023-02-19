@@ -18,20 +18,20 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity(name="DetCarritoEntity")
-@Table(name="detcarrito")
-public class DetCarritoEntity implements Serializable{
+@Entity(name="CarritoEntity")
+@Table(name="carrito")
+public class CarritoEntity implements Serializable{
     
     private final static long serialVersionUID = 1L;
     
     @Id
-    @Column(name = "iddetcarrito")
+    @Column(name = "idcarrito")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long iddetcarrito;     
+    private long idcarrito;     
     
     @ManyToOne
-    @JoinColumn(name="idcabcarrito", nullable = false)
-    private CabCarritoEntity idcabcarrito;
+    @JoinColumn(name="idusuario", nullable = false)
+    private UsuarioEntity idusuario;
     
     @ManyToOne
     @JoinColumn(name="idproducto", nullable = false)

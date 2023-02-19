@@ -18,10 +18,11 @@ public class DetalleVentaServiceImpl implements DetalleVentaService{
     public List<DetalleVentaEntity> findAll() {
         return detVenta.findAll();
     }
-
+    
+    
     @Override
-    public List<DetalleVentaEntity> findAllCustom() {
-        return detVenta.findAllCustom();
+    public List<DetalleVentaEntity> findIdVenta(Long xidventa) {
+        return detVenta.findIdVenta(xidventa);
     }
 
     @Override
@@ -48,4 +49,6 @@ public class DetalleVentaServiceImpl implements DetalleVentaService{
         objdetalleventa.setEstado(false);
         return detVenta.save(objdetalleventa);
     }*/
+
+
 }

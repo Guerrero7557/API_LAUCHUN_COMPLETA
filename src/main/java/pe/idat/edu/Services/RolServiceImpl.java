@@ -11,8 +11,8 @@ import pe.idat.edu.Repository.RolRepository;
 @Service
 public class RolServiceImpl implements RolService{
 
-      @Autowired
-      private RolRepository rolRepository;
+    @Autowired
+    private RolRepository rolRepository;
         
     @Override
     public List<RolEntity> findAll() {

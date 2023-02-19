@@ -6,10 +6,10 @@ import pe.idat.edu.Entity.DetalleVentaEntity;
 
 public interface DetalleVentaService {
     //funcion que te permita mostrar todos los datos    
-    List<DetalleVentaEntity> findAll();
+    List<DetalleVentaEntity> findAll();   
     
-    //funcion para mostrar todods los datos habilitados
-    List<DetalleVentaEntity> findAllCustom();
+    //funcion para buscar por id de venta
+    List<DetalleVentaEntity> findIdVenta(Long xidventa); 
     
     //funcion para buscar por codigo
     Optional<DetalleVentaEntity> findById(Long id);
