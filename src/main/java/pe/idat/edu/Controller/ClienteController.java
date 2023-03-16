@@ -12,47 +12,47 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pe.idat.edu.Entity.UsuarioEntity;
-import pe.idat.edu.Services.UsuarioService;
+import pe.idat.edu.Entity.ClienteEntity;
+import pe.idat.edu.Services.ClienteService;
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("/cliente")
 @CrossOrigin(origins= {"http://localhost/4200"})
-public class UsuarioController {
+public class ClienteController {
     
     @Autowired
-    private UsuarioService UsuSer;
+    private ClienteService CliSer;
     
     @GetMapping
-    public List<UsuarioEntity>findAll(){
-        return UsuSer.findAll();
+    public List<ClienteEntity>findAll(){
+        return CliSer.findAll();
     }
     
     @GetMapping("/custom")
-    public List<UsuarioEntity>findAllCustom(){
-        return UsuSer.findAllCustom();
+    public List<ClienteEntity>findAllCustom(){
+        return CliSer.findAllCustom();
     }
     
     @GetMapping("/{id}")
-    public Optional<UsuarioEntity>findById(@PathVariable Long id ){
-        return UsuSer.findById(id);
+    public Optional<ClienteEntity>findById(@PathVariable Long id ){
+        return CliSer.findById(id);
     }
     
     @PostMapping
-    public UsuarioEntity add(@RequestBody UsuarioEntity u){
-        return UsuSer.add(u);
+    public ClienteEntity add(@RequestBody ClienteEntity c){
+        return CliSer.add(c);
     }
     
     @PutMapping("/{id}")
-    public UsuarioEntity update(@PathVariable long id, @RequestBody UsuarioEntity u){
-        u.setIdusuario(id);
-        return UsuSer.update(u);
+    public ClienteEntity update(@PathVariable long id, @RequestBody ClienteEntity c){
+        c.setIdcliente(id);
+        return CliSer.update(c);
     }
     
     @DeleteMapping("/{id}")
-    public UsuarioEntity delete(@PathVariable long id){
-        UsuarioEntity objusuario = new UsuarioEntity();
-        objusuario.setEstado(false);
-        return UsuSer.delete(UsuarioEntity.builder().idusuario(id).build());
+    public ClienteEntity delete(@PathVariable long id){
+        ClienteEntity objcliente = new ClienteEntity();
+        objcliente.setEstado(false);
+        return CliSer.delete(ClienteEntity.builder().idcliente(id).build());
     }
 }

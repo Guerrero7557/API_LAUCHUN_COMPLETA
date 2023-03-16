@@ -2,24 +2,27 @@ package pe.idat.edu.Services;
 
 import java.util.List;
 import java.util.Optional;
-import pe.idat.edu.Entity.UsuarioEntity;
+import pe.idat.edu.Entity.EmpleadoEntity;
 
-public interface UsuarioService {
+
+public interface EmpleadoService {
+    
     //funcion que te permita mostrar todos los datos    
-    List<UsuarioEntity> findAll();
+    List<EmpleadoEntity> findAll();
     
     //funcion para mostrar todods los datos habilitados
-    List<UsuarioEntity> findAllCustom();
+    List<EmpleadoEntity> findAllCustom();
     
     //funcion para buscar por codigo
-    Optional<UsuarioEntity> findById(Long id);
+    Optional<EmpleadoEntity> findById(Long id);
     
     //funcion para registrar datos
-    UsuarioEntity add(UsuarioEntity u);
+    EmpleadoEntity add(EmpleadoEntity e);
     
     //funcion para actualizar datos
-    UsuarioEntity update(UsuarioEntity u);
+    EmpleadoEntity update(EmpleadoEntity e);
     
     //funcion para eliminar datos
-    UsuarioEntity delete(UsuarioEntity u);
+    EmpleadoEntity delete(EmpleadoEntity e);
+    
 }

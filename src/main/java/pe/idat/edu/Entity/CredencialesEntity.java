@@ -1,15 +1,13 @@
+
 package pe.idat.edu.Entity;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.io.Serializable;
-import java.util.Date;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,24 +17,20 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity(name="CompraEntity")
-@Table(name="compra")
-public class CompraEntity implements Serializable{
+@Entity(name="CredencialesEntity")
+@Table(name="credenciales")
+public class CredencialesEntity implements Serializable{
     
     private static final long serialVersionUID=1L;
     
     @Id
-    @Column(name="idcompra")
+    @Column(name="idcredenciales")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idcompra;
+    private long idcredenciales;
     
-    @ManyToOne
-     @JoinColumn(name="idproveedor", nullable = false)
-    private ProveedorEntity idproveedor;
+    @Column(name="usuario")
+    private String usuario;
     
-    @Column(name="fechacompra")
-    private String fechacompra;
-    
-    @Column(name="estado")
-    private boolean estado;    
+    @Column(name="password")
+    private String password;
 }
