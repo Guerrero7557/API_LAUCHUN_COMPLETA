@@ -31,7 +31,7 @@ public class VentaEntity implements Serializable{
     
     @ManyToOne
      @JoinColumn(name="idcliente", nullable = false)
-    private ClienteEntity idcliente;
+    private UsuarioEntity idcliente;
     
     @ManyToOne
     @JoinColumn(name="idtipopago", nullable = false)

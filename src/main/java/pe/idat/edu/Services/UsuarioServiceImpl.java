@@ -5,45 +5,45 @@ import java.util.Optional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.idat.edu.Entity.ClienteEntity;
-import pe.idat.edu.Repository.ClienteRepository;
+import pe.idat.edu.Entity.UsuarioEntity;
+import pe.idat.edu.Repository.UsuarioRepository;
 
 @Service
-public class ClienteServiceImpl implements ClienteService{
+public class UsuarioServiceImpl implements UsuarioService{
 
     @Autowired
-    private ClienteRepository CliRep;
+    private UsuarioRepository CliRep;
 
     @Override
-    public List<ClienteEntity> findAll() {
+    public List<UsuarioEntity> findAll() {
         return CliRep.findAll();
     }
 
     @Override
-    public List<ClienteEntity> findAllCustom() {
+    public List<UsuarioEntity> findAllCustom() {
         return CliRep.findAllCustom();
     }
 
     @Override
-    public Optional<ClienteEntity> findById(Long id) {
+    public Optional<UsuarioEntity> findById(Long id) {
         return CliRep.findById(id);
     }
 
     @Override
-    public ClienteEntity add(ClienteEntity c) {
+    public UsuarioEntity add(UsuarioEntity c) {
         return CliRep.save(c);
     }
 
     @Override
-    public ClienteEntity update(ClienteEntity c) {
-        ClienteEntity objcliente = CliRep.getById(c.getIdcliente());
+    public UsuarioEntity update(UsuarioEntity c) {
+        UsuarioEntity objcliente = CliRep.getById(c.getIdusuario());
         BeanUtils.copyProperties(c, objcliente);
         return CliRep.save(objcliente);
     }
 
     @Override
-    public ClienteEntity delete(ClienteEntity c) {
-        ClienteEntity objcliente = CliRep.getById(c.getIdcliente());
+    public UsuarioEntity delete(UsuarioEntity c) {
+        UsuarioEntity objcliente = CliRep.getById(c.getIdusuario());
         objcliente.setEstado(false);
         return CliRep.save(objcliente);
     }

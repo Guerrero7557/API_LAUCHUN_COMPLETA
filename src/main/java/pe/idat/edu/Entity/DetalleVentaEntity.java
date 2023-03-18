@@ -40,7 +40,7 @@ public class DetalleVentaEntity implements Serializable{
     @Column(name = "cantidad")
     private int cantidad;
     
-    @Column(name = "costoventa")
-    private double costoventa;
+    @Column(name = "precioventa")
+    private double precioventa;
     
 }

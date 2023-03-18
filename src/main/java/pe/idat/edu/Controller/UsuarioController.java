@@ -12,47 +12,47 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pe.idat.edu.Entity.ClienteEntity;
-import pe.idat.edu.Services.ClienteService;
+import pe.idat.edu.Entity.UsuarioEntity;
+import pe.idat.edu.Services.UsuarioService;
 
 @RestController
-@RequestMapping("/cliente")
+@RequestMapping("usuario")
 @CrossOrigin(origins= {"http://localhost/4200"})
-public class ClienteController {
+public class UsuarioController {
     
     @Autowired
-    private ClienteService CliSer;
+    private UsuarioService CliSer;
     
     @GetMapping
-    public List<ClienteEntity>findAll(){
+    public List<UsuarioEntity>findAll(){
         return CliSer.findAll();
     }
     
     @GetMapping("/custom")
-    public List<ClienteEntity>findAllCustom(){
+    public List<UsuarioEntity>findAllCustom(){
         return CliSer.findAllCustom();
     }
     
     @GetMapping("/{id}")
-    public Optional<ClienteEntity>findById(@PathVariable Long id ){
+    public Optional<UsuarioEntity>findById(@PathVariable Long id ){
         return CliSer.findById(id);
     }
     
     @PostMapping
-    public ClienteEntity add(@RequestBody ClienteEntity c){
+    public UsuarioEntity add(@RequestBody UsuarioEntity c){
         return CliSer.add(c);
     }
     
     @PutMapping("/{id}")
-    public ClienteEntity update(@PathVariable long id, @RequestBody ClienteEntity c){
-        c.setIdcliente(id);
+    public UsuarioEntity update(@PathVariable long id, @RequestBody UsuarioEntity c){
+        c.setIdusuario(id);
         return CliSer.update(c);
     }
     
     @DeleteMapping("/{id}")
-    public ClienteEntity delete(@PathVariable long id){
-        ClienteEntity objcliente = new ClienteEntity();
+    public UsuarioEntity delete(@PathVariable long id){
+        UsuarioEntity objcliente = new UsuarioEntity();
         objcliente.setEstado(false);
-        return CliSer.delete(ClienteEntity.builder().idcliente(id).build());
+        return CliSer.delete(UsuarioEntity.builder().idusuario(id).build());
     }
 }

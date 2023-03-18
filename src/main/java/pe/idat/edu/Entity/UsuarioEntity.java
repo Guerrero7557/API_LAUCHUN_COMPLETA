@@ -18,20 +18,20 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity(name="ClienteEntity")
-@Table(name="cliente")
-public class ClienteEntity implements Serializable{
+@Entity(name="UsuarioEntity")
+@Table(name="usuario")
+public class UsuarioEntity implements Serializable{
     
     private static final long serialVersionUID=1L;
     
     @Id
-    @Column(name="idcliente")
+    @Column(name="idusuario")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idcliente;
+    private long idusuario;
     
     @ManyToOne
-    @JoinColumn(name="idcredenciales",nullable= false )
-    private CredencialesEntity idcredenciales;
+    @JoinColumn(name="idrol",nullable= false )
+    private RolEntity idrol;
     
     @Column(name="nombre")
     private String nombre;
@@ -49,7 +49,13 @@ public class ClienteEntity implements Serializable{
     private String dni;
     
     @Column(name="direccion")
-    private String direccion;
+    private String direccion;    
+     
+    @Column(name="usuario")
+    private String usuario;
+    
+    @Column(name="password")
+    private String password;
     
     @Column(name="estado")
     private boolean estado;
