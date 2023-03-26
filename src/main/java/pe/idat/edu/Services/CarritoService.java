@@ -11,6 +11,9 @@ public interface CarritoService {
     //funcion para buscar detalles por id de cabecera de carrito
     List<CarritoEntity>findIdUsuario(Long xidusuario);
     
+    //funcion para mostrar todods los datos habilitados
+    List<CarritoEntity> findAllCustom();
+    
     //funcion para buscar por codigo
     Optional<CarritoEntity> findById(Long id);     
     

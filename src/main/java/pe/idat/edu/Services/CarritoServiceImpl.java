@@ -22,6 +22,11 @@ public class CarritoServiceImpl implements CarritoService{
     }
     
     @Override
+    public List<CarritoEntity> findAllCustom() {
+        return detCarrito.findAllCustom();
+    }
+    
+    @Override
     public List<CarritoEntity> findIdUsuario(Long xidusuario) {
         return detCarrito.findIdUsuario(xidusuario);
     }

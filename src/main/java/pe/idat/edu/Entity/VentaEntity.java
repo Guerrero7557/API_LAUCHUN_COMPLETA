@@ -30,8 +30,8 @@ public class VentaEntity implements Serializable{
     private long idventa;
     
     @ManyToOne
-     @JoinColumn(name="idcliente", nullable = false)
-    private UsuarioEntity idcliente;
+     @JoinColumn(name="idusuario", nullable = false)
+    private UsuarioEntity idusuario;
     
     @ManyToOne
     @JoinColumn(name="idtipopago", nullable = false)

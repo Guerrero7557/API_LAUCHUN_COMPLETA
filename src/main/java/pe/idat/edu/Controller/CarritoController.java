@@ -30,6 +30,11 @@ public class CarritoController {
         return DetCarServ.findAll();
     }    
     
+    @GetMapping("/custom")
+    public List<CarritoEntity>findAllCustom(){
+        return DetCarServ.findAllCustom();
+    }
+    
     @GetMapping("/buscarporusuario/{xidusuario}")
     public List<CarritoEntity>findIdUsuario(@PathVariable Long xidusuario){
         return DetCarServ.findIdUsuario(xidusuario);

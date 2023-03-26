@@ -42,13 +42,13 @@ public class DetalleVentaServiceImpl implements DetalleVentaService{
         return detVenta.save(objdetalleventa);
     }
 
-    /*
+    
     @Override
     public DetalleVentaEntity delete(DetalleVentaEntity detven) {
         DetalleVentaEntity objdetalleventa = detVenta.getById(detven.getIddetalle());
-        objdetalleventa.setEstado(false);
+        detVenta.delete(objdetalleventa);
         return detVenta.save(objdetalleventa);
-    }*/
+    }
 
 
 }

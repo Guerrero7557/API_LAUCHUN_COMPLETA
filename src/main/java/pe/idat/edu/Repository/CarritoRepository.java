@@ -12,11 +12,11 @@ import pe.idat.edu.Entity.CarritoEntity;
 
 public interface CarritoRepository extends JpaRepository<CarritoEntity, Long>{ 
     
+    @Query("select car from CarritoEntity car")
+    List<CarritoEntity>findAllCustom();
+    
     @Query(value ="{call buscardetalleporusuario(:xidusuario)}",nativeQuery=true)
     List<CarritoEntity>findIdUsuario(@Param("xidusuario") Long xidusuario);
-    
-    
-    
     
     @Query(value ="{call eliminarregistroscarrito(:xidusuario)}", nativeQuery = true)
     void deleteCarrito(@Param("xidusuario")Long xidusuario);

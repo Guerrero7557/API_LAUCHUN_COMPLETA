@@ -19,7 +19,7 @@ public interface DetalleVentaService {
     
     //funcion para actualizar datos
     DetalleVentaEntity update(DetalleVentaEntity detven);
-    /*
+    
     //funcion para eliminar datos
-    DetalleVentaEntity delete(DetalleVentaEntity detven);*/
+    DetalleVentaEntity delete(DetalleVentaEntity detven);
 }

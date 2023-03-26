@@ -31,7 +31,7 @@ public class CarritoEntity implements Serializable{
     
     @ManyToOne
     @JoinColumn(name="idusuario", nullable = false)
-    private UsuarioEntity idcliente;
+    private UsuarioEntity idusuario;
     
     @ManyToOne
     @JoinColumn(name="idproducto", nullable = false)

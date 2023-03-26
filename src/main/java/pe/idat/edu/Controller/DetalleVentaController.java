@@ -50,11 +50,10 @@ public class DetalleVentaController {
         detven.setIddetalle(id);
         return DetVenServ.update(detven);
     }
-    /*
+    
     @DeleteMapping("/{id}")
-    public DetalleVentaEntity delete(@PathVariable long id){
+    DetalleVentaEntity delete(@PathVariable long id){
         DetalleVentaEntity objdetalleventa = new DetalleVentaEntity();
-        objdetalleventa.setEstado(false);
-        return DetVenServ.delete(DetalleVentaEntity.builder().iddetalle(id).build());
-    }*/
+        return DetVenServ.delete(objdetalleventa);
+    }
 }
